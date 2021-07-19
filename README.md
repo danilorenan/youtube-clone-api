@@ -1,11 +1,11 @@
 # Youtube clone using Youtube Api v3
 
-<span style='color: green'>
+
+```diff
 > Status: Developing
-</span>
+```
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+<img src="https://ibb.co/8DmG6C8" width="200"/>
 ## Available Scripts
 
 In the project directory, you can run:
