@@ -1,17 +1,21 @@
-import { createStore, applyMiddleware } from 'redux';
-import {composeWithDevTools} from 'redux-devtools-extension'
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension'
+import { homeVideosReducer,
+        searchedVideosReducer, 
+        selectedVideoReducer} from './reducers/videosreducer';
 import thunk from 'redux-thunk';
 
-const initialState = {
-    name: 'Danilo',
-    age: 26
-}
 
-const reducer = (initialState) => initialState
+
+const rootReducer = combineReducers({
+    homeVideos: homeVideosReducer, 
+    searchedVideos: searchedVideosReducer,
+    selectedVideo: selectedVideoReducer,
+})
 
 const store = createStore(
-    reducer, 
-    initialState, 
+    rootReducer, 
+    {}, 
     composeWithDevTools(applyMiddleware(thunk)));
 
 export default store;

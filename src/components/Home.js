@@ -1,33 +1,30 @@
-import { HomeContainer,
-         ItemContainer,
-         VideoThumb,
-         VideoTitle,
-         InfosContainer, 
-         ImageChannel,
-         ChannelTitle} from "./styles/styles";
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react'; 
-import ImageThumb from '../assets/VideoThumb.jpg';
-import ImgChannel from '../assets/Image-Channel.jpg';
+import { HomeContainer } from "./styles/styles";
+import VideoItem from './VideoItem';
+import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react'; 
 import { getPopularVideos } from "../redux/actions/videosaction";
+import request from "../apis/youtube";
 
 
 const Home = () => {
+    
+    const {videos} = useSelector(state => state.homeVideos)
+    
+    const [channelIcon, setChannelIcon] = useState(null)
+
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(getPopularVideos)
+        dispatch(getPopularVideos())
     },[dispatch])
-    
+
+   
+    console.log(videos)
+
     return (
         <HomeContainer>
-            <ItemContainer>
-                <VideoThumb src={ImageThumb} />
-                <InfosContainer>
-                    <ImageChannel src={ImgChannel} />
-                    <VideoTitle>4 SÉRIES INDISPENSÁVEIS PRA VOCÊ ASSISTIR AGORA!kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk</VideoTitle>
-                </InfosContainer>
-                <ChannelTitle>Holandês Voador</ChannelTitle>
-            </ItemContainer>
+                {videos.map((video) => (
+                        <VideoItem video={video} key={video.id} />
+                    ))}
         </HomeContainer>
     )
 }
