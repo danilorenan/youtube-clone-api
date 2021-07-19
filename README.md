@@ -4,9 +4,23 @@
 ```diff
 > Status: Developing
 ```
+## Screenshots 📺
 
-<img src="https://ibb.co/8DmG6C8" width="200"/>
-## Available Scripts
+<img style="width=20" src="https://i.ibb.co/vxcfZFz/Homescreen.png" />
+<img style="width=20" src="https://i.ibb.co/dQfzDSb/Search-Screen.png" />
+<img style="width=20" src="https://i.ibb.co/yfdjJ6p/Watch-Screen.png" />
+
+## Technologies used 👨‍💻
+- React
+- Styled Components
+- Material-ui
+- React Hooks
+- Redux
+- Axios 
+- Youtube API V3
+- 
+
+## Available Scripts 🚀
 
 In the project directory, you can run:
 
