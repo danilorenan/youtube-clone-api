@@ -18,7 +18,7 @@
 - Redux
 - Axios 
 - Youtube API V3
-- 
+
 
 ## Available Scripts 🚀
 
